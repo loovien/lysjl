@@ -12,5 +12,17 @@
 
     <artifactId>sjl-biz</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.51lianying.sjl</groupId>
+            <artifactId>sjl-model</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.51lianying.sjl</groupId>
+            <artifactId>sjl-dal</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>

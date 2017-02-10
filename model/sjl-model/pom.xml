@@ -12,5 +12,12 @@
 
     <artifactId>sjl-model</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.51lianying.sjl</groupId>
+            <artifactId>sjl-commons</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>
