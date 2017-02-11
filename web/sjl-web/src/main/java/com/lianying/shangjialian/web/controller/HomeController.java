@@ -19,7 +19,7 @@ public class HomeController {
     @RequestMapping
     @ResponseBody
     public String home() {
-        return "home";
+        return "hello";
     }
 
     @RequestMapping(value = "/test/{name}")

@@ -17,6 +17,12 @@
             <groupId>com.lianying.shangjialian</groupId>
             <artifactId>sjl-web</artifactId>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+        </dependency>
     </dependencies>
 
 

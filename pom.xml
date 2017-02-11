@@ -32,6 +32,7 @@
         <jcloverslf4j.version>1.7.21</jcloverslf4j.version>
         <jstl.version>1.2</jstl.version>
         <jsp.version>2.3.1</jsp.version>
+        <freemark.version>2.3.20</freemark.version>
 
     </properties>
 
@@ -98,6 +99,15 @@
                 <artifactId>jcl-over-slf4j</artifactId>
                 <version>${jcloverslf4j.version}</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemark.version}</version>
+            </dependency>
+
+
 
             <dependency>
                 <groupId>org.logback-extensions</groupId>
