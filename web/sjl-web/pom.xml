@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>sjl-parent</artifactId>
-        <groupId>com.51lianying.sjl</groupId>
+        <groupId>com.lianying.shangjialian</groupId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
@@ -15,8 +15,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.51lianying.sjl</groupId>
-            <artifactId>sjl-commons</artifactId>
+            <groupId>com.lianying.shangjialian</groupId>
+            <artifactId>sjl-biz</artifactId>
         </dependency>
     </dependencies>
 
