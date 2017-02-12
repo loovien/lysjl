@@ -15,6 +15,12 @@
     <dependencies>
 
         <dependency>
+            <groupId>com.lianying.shangjialian</groupId>
+            <artifactId>sjl-model</artifactId>
+        </dependency>
+
+
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
         </dependency>

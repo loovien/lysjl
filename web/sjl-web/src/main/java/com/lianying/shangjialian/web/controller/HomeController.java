@@ -17,7 +17,6 @@ import java.util.Map;
 public class HomeController {
 
     @RequestMapping
-    @ResponseBody
     public String home() {
         return "hello";
     }
