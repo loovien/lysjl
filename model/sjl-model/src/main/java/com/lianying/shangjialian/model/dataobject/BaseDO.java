@@ -1,4 +1,4 @@
-package com.lianying.shangjialian.model.dataobject.user;
+package com.lianying.shangjialian.model.dataobject;
 
 import java.io.Serializable;
 import java.util.Date;

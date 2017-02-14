@@ -1,15 +1,15 @@
-package com.lianying.shangjialian.dal.dao.user;
+package com.lianying.shangjialian.dal.dao;
 
 /**
  * Created by luowen on 2017/2/14.
  */
 public interface BaseDao<T> {
 
-    Integer create(T entity);
+    Integer insert(T entity);
 
     T queryById(Integer id);
 
     void deleteById(Integer id);
 
-    void  update(T entity);
+    void update(T entity);
 }
