@@ -12,5 +12,13 @@
 
     <artifactId>sjl-dal</artifactId>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>com.lianying.shangjialian</groupId>
+            <artifactId>sjl-commons</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>
