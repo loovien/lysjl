@@ -3,8 +3,17 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.lianying.shangjialian.dal.mapper.user.UserMapper">
+    <resultMap id="UserDoResult" type="com.lianying.shangjialian.model.dataobject.user.UserDO">
+        <id column="id" property="id"/>
+        <result column="name" property="name" />
+        <result column="mobile" property="mobile" />
+        <result column="expired_at" property="expiredAt" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="deleted_at" property="deletedAt" />
+    </resultMap>
 
-    <select id="queryById" resultType="com.lianying.shangjialian.model.dataobject.user.UserDO">
+    <select id="queryById" resultMap="UserDoResult" >
         select * from user where id = #{id};
     </select>
 </mapper>
