@@ -1,2 +1,0 @@
-hello ftl
-${pageContext}

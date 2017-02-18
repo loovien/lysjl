@@ -41,7 +41,7 @@
                     <div>
                         <#--<a class="btn btn-default submit" href="index.html">Log in</a>-->
                         <#--<a class="reset_pass" href="#">Lost your password?</a>-->
-                        <input type="submit" value="Login" />
+                            <input type="submit" class="btn btn-default submit" value="Login">
                     </div>
 
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -59,8 +59,10 @@
                         -->
 
                         <div>
-                            <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                            <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                            <br>
+                            <br>
+                            <h1><i class="fa fa-paw"></i> 51lianying shangjialian!</h1>
+                            <#--<p>©2017 All Rights Reserved. shangjialian. Privacy and Terms</p>-->
                         </div>
                     </div>
                 </form>
