@@ -29,7 +29,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframew
         <mvc:jsp prefix="/WEB-INF/views/" suffix=".jsp" cache-views="false"/>
     </mvc:view-resolvers>
     -->
-    <mvc:resources mapping="/static/**" location="/static/**" />
+    <mvc:resources mapping="/static/**" location="/static/" />
     <mvc:default-servlet-handler />
 
     <!--

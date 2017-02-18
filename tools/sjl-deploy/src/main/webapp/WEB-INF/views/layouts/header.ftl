@@ -7,10 +7,10 @@
 
 <!-- Bootstrap core CSS -->
 
-<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+<link href="static/css/bootstrap.min.css" rel="stylesheet">
 
-<link href="/static/fonts/css/font-awesome.min.css" rel="stylesheet">
-<link href="css/animate.min.css" rel="stylesheet">
+<link href="static/fonts/css/font-awesome.min.css" rel="stylesheet">
+<link href="static/css/animate.min.css" rel="stylesheet">
 
 <!--[if lt IE 9]>
 <script src="../assets/js/ie8-responsive-file-warning.js"></script>

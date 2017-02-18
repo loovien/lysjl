@@ -7,7 +7,8 @@
         <intercept-url pattern="/static/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <intercept-url pattern="/login**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <intercept-url pattern="/**" access="ROLE_USER" />
-        <form-login login-page="/login" />
+        <logout logout-url="/logout" logout-success-url="/login" />
+        <form-login login-page="/login" default-target-url="/" />
     </http>
     <user-service>
         <user name="admin" password="admin" authorities="ROLE_USER" />
