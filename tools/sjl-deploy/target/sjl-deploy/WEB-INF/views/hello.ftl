@@ -1,1 +1,2 @@
 hello ftl
+${pageContext}

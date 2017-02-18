@@ -35,6 +35,9 @@
         <jsp.version>2.3.1</jsp.version>
         <freemark.version>2.3.23</freemark.version>
 
+        <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+        <java.version>1.7</java.version>
+
     </properties>
 
     <dependencyManagement>
