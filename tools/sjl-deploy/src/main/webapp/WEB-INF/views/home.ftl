@@ -1,5 +1,6 @@
 <#include "layouts/header.ftl">
 <#include "layouts/sidebar.ftl">
+<#include "layouts/topNav.ftl">
 
 <!-- page content -->
 <div class="right_col" role="main">

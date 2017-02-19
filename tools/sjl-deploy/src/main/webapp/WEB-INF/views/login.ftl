@@ -31,7 +31,7 @@
         <div class="animate form login_form">
             <section class="login_content">
                 <form action="/login" method="post">
-                    <#--<h1>Login</h1>-->
+                    <h1><i class="fa fa-heart"></i>&nbsp;&nbsp;&nbsp;&nbsp;商家恋!</h1>
                     <div>
                         <input type="text" name="username" class="form-control" placeholder="Username" required="" />
                     </div>
@@ -41,7 +41,7 @@
                     <div>
                         <#--<a class="btn btn-default submit" href="index.html">Log in</a>-->
                         <#--<a class="reset_pass" href="#">Lost your password?</a>-->
-                            <input type="submit" class="btn btn-default submit" value="Login">
+                            <input type="submit" class="btn btn-default submit" value="登录">
                     </div>
 
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -58,8 +58,7 @@
                         <br />
                         -->
                         <div>
-                            <#--<h1><i class="fa fa-paw"></i> 51lianying shangjialian!</h1>-->
-                            <#--<p>©2017 All Rights Reserved. shangjialian. Privacy and Terms</p>-->
+                            <p>©2017 All Rights Reserved. 我要联赢-商家恋</p>
                         </div>
                     </div>
                 </form>

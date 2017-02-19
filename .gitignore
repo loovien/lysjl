@@ -1,6 +1,16 @@
 .idea
 target/
-/out/
+out/
 
-**/*.war
+*.war
 *.jar
+*.ear,
+*.iml
+*.idea
+
+target/**/*.war
+target/*.war
+
+
+target/**/*.jar
+target/*.jar
