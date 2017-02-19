@@ -19,7 +19,7 @@
     <link href="static/plugins/animate.css/animate.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="static/css/custom.min.css" rel="stylesheet">
+    <link href="static/css/custom.css" rel="stylesheet">
 </head>
 
 <body class="login">
@@ -31,7 +31,7 @@
         <div class="animate form login_form">
             <section class="login_content">
                 <form action="/login" method="post">
-                    <h1><i class="fa fa-heart"></i>&nbsp;&nbsp;&nbsp;&nbsp;商家恋!</h1>
+                    <h1><i class="fa fa-heart"></i>&nbsp;&nbsp;&nbsp;&nbsp;商家恋</h1>
                     <div>
                         <input type="text" name="username" class="form-control" placeholder="Username" required="" />
                     </div>
@@ -56,10 +56,10 @@
 
                         <div class="clearfix"></div>
                         <br />
-                        -->
                         <div>
                             <p>©2017 All Rights Reserved. 我要联赢-商家恋</p>
                         </div>
+                        -->
                     </div>
                 </form>
             </section>
