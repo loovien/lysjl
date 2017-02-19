@@ -31,7 +31,7 @@
         <div class="animate form login_form">
             <section class="login_content">
                 <form action="/login" method="post">
-                    <h1>Login</h1>
+                    <#--<h1>Login</h1>-->
                     <div>
                         <input type="text" name="username" class="form-control" placeholder="Username" required="" />
                     </div>
@@ -58,9 +58,7 @@
                         <br />
                         -->
                         <div>
-                            <br>
-                            <br>
-                            <h1><i class="fa fa-paw"></i> 51lianying shangjialian!</h1>
+                            <#--<h1><i class="fa fa-paw"></i> 51lianying shangjialian!</h1>-->
                             <#--<p>©2017 All Rights Reserved. shangjialian. Privacy and Terms</p>-->
                         </div>
                     </div>
