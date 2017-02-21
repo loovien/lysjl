@@ -4,7 +4,7 @@
 
 <mapper namespace="com.lianying.shangjialian.dal.mapper.activity.ActivityMapper">
     <resultMap id="ActivityMap" type="com.lianying.shangjialian.model.dataobject.activity.ActivityDO">
-        <id>id</id>
+        <id property="id" column="id" />
         <result column="title" property="title" />
         <result column="description" property="description" />
         <result column="keyword" property="keyword" />
@@ -12,7 +12,7 @@
         <result column="banner_img" property="bannerImg" />
         <result column="color_plate" property="colorPlate" />
         <result column="background_music" property="backgroundMusic" />
-        <result column="is_recommand" property="isRecommend" />
+        <result column="is_recommend" property="isRecommend" />
         <result column="is_offshelf" property="isOffshelf" />
         <result column="bizman_copy_cnt" property="bizmanCopyCnt" />
         <result column="netizen_copy_cnt" property="netizenCopyCnt" />
@@ -20,7 +20,49 @@
         <result column="updated_at" property="updatedAt" />
         <result column="deleted_at" property="deletedAt" />
     </resultMap>
+
     <select id="queryById" resultMap="ActivityMap">
-        select * from bizman_activity where id = #id;
+        select * from bizman_activity where id = #{id};
     </select>
+
+    <sql id="fields">
+        title, description, keyword, cover_img, banner_img, color_plate, background_music,
+        is_recommend, is_offshelf, bizman_copy_cnt, netizen_copy_cnt, created_at, updated_at, deleted_at
+    </sql>
+
+    <insert id="insert">
+        INSERT INTO bizman_activity
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="title != null" > title, </if>
+            <if test="description != null"> description, </if>
+            <if test="keyword != null"> keyword, </if>
+            <if test="coverImg != null"> cover_img, </if>
+            <if test="bannerImg != null"> banner_img, </if>
+            <if test="colorPlate != null"> color_plate, </if>
+            <if test="backgroundMusic != null"> background_music,</if>
+            <if test="isRecommend != null"> is_recommend, </if>
+            <if test="isOffshelf != null"> is_offshelf, </if>
+            <if test="bizmanCopyCnt != null"> bizman_copy_cnt, </if>
+            <if test="netizenCopyCnt != null">netizen_copy_cnt</if>
+            <if test="createdAt != null"> created_at, </if>
+            <if test="updatedAt != null"> updated_at, </if>
+            <if test="deletedAt != null"> deleted_at, </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="title != null" > #{title}, </if>
+            <if test="description != null"> #{description}, </if>
+            <if test="keyword != null"> #{keyword}, </if>
+            <if test="coverImg != null"> #{coverImg}, </if>
+            <if test="bannerImg != null"> #{bannerImg}, </if>
+            <if test="colorPlate != null"> #{colorPlate}, </if>
+            <if test="backgroundMusic != null"> #{backgroundMusic},</if>
+            <if test="isRecommend != null"> #{isRecommend}, </if>
+            <if test="isOffshelf != null"> #{isOffshelf}, </if>
+            <if test="bizmanCopyCnt != null"> #{bizmanCopyCnt}, </if>
+            <if test="netizenCopyCnt != null"> #{netizenCopyCnt}</if>
+            <if test="createdAt != null"> #{createdAt}, </if>
+            <if test="updatedAt != null"> #{updatedAt}, </if>
+            <if test="deletedAt != null"> #{deletedAt}, </if>
+        </trim>
+    </insert>
 </mapper>

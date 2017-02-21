@@ -139,4 +139,23 @@ public class ActivityDO extends BaseDO{
     public void setNetizenCopyCnt(Integer netizenCopyCnt) {
         this.netizenCopyCnt = netizenCopyCnt;
     }
+
+    @Override
+    public String toString() {
+        return "ActivityDO{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", industryId=" + industryId +
+                ", description='" + description + '\'' +
+                ", keyword='" + keyword + '\'' +
+                ", coverImg='" + coverImg + '\'' +
+                ", bannerImg='" + bannerImg + '\'' +
+                ", colorPlate='" + colorPlate + '\'' +
+                ", backgroundMusic='" + backgroundMusic + '\'' +
+                ", isRecommend=" + isRecommend +
+                ", isOffshelf=" + isOffshelf +
+                ", bizmanCopyCnt=" + bizmanCopyCnt +
+                ", netizenCopyCnt=" + netizenCopyCnt +
+                '}';
+    }
 }
