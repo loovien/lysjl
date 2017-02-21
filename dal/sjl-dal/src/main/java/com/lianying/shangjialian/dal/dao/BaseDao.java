@@ -1,5 +1,7 @@
 package com.lianying.shangjialian.dal.dao;
 
+import java.util.List;
+
 /**
  * Created by luowen on 2017/2/14.
  */

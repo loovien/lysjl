@@ -1,0 +1,26 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lianying.shangjialian.dal.mapper.activity.ActivityMapper">
+    <resultMap id="ActivityMap" type="com.lianying.shangjialian.model.dataobject.activity.ActivityDO">
+        <id>id</id>
+        <result column="title" property="title" />
+        <result column="description" property="description" />
+        <result column="keyword" property="keyword" />
+        <result column="cover_img" property="coverImg" />
+        <result column="banner_img" property="bannerImg" />
+        <result column="color_plate" property="colorPlate" />
+        <result column="background_music" property="backgroundMusic" />
+        <result column="is_recommand" property="isRecommend" />
+        <result column="is_offshelf" property="isOffshelf" />
+        <result column="bizman_copy_cnt" property="bizmanCopyCnt" />
+        <result column="netizen_copy_cnt" property="netizenCopyCnt" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="deleted_at" property="deletedAt" />
+    </resultMap>
+    <select id="queryById" resultMap="ActivityMap">
+        select * from bizman_activity where id = #id;
+    </select>
+</mapper>
