@@ -16,4 +16,11 @@
     <select id="queryById" resultMap="UserDoResult" >
         select * from user where id = #{id};
     </select>
+
+    <select id="queryByPage" resultMap="UserDoResult">
+        SELECT * from bizman_user
+        <where> 1 = 1</where>
+        <include refid="com.lianying.shangjialian.dal.mapper.BaseMapper.sortBy" />
+        <include refid="com.lianying.shangjialian.dal.mapper.BaseMapper.pagination" />
+    </select>
 </mapper>

@@ -26,9 +26,22 @@
     </select>
 
     <sql id="fields">
-        title, description, keyword, cover_img, banner_img, color_plate, background_music,
+        id, title, description, keyword, cover_img, banner_img, color_plate, background_music,
         is_recommend, is_offshelf, bizman_copy_cnt, netizen_copy_cnt, created_at, updated_at, deleted_at
     </sql>
+
+    <sql id="query">
+        <trim prefix=" where " prefixOverrides="AND|OR" >
+            <if test="id != null">
+                AND id = #{id}
+            </if>
+            <if test="title != null">
+                AND title like title}
+            </if>
+            <!-- and so on -->
+        </trim>
+    </sql>
+
 
     <insert id="insert">
         INSERT INTO bizman_activity
@@ -65,4 +78,12 @@
             <if test="deletedAt != null"> #{deletedAt}, </if>
         </trim>
     </insert>
+
+    <select id="queryByPage" resultMap="ActivityMap" parameterType="com.lianying.shangjialian.model.query.activity.ActivityQuery">
+        SELECT * FROM bizman_activity
+        <!-- <include refid="query" />-->
+        <include refid="com.lianying.shangjialian.dal.mapper.BaseMapper.orderByConditions" ></include>
+        <include refid="com.lianying.shangjialian.dal.mapper.BaseMapper.pagination" ></include>
+    </select>
+    
 </mapper>
