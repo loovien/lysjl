@@ -52,9 +52,8 @@ public class ActivityDaoImplTest {
 
     @Test
     public void queryByPage() {
-        BaseQuery baseQuery = new BaseQuery();
-        baseQuery.setPageNo(1);
-        baseQuery.setPageSize(2);
+        BaseQuery baseQuery = new BaseQuery(10, 1);
+        System.out.println(baseQuery);
         List<ActivityDO> result = activityDao.queryByPage(baseQuery);
 
         System.out.println(result);

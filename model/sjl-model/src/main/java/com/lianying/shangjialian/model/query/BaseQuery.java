@@ -65,4 +65,14 @@ public class BaseQuery {
     public void setSorts(List<Sort> sorts) {
         this.sorts = sorts;
     }
+
+    @Override
+    public String toString() {
+        return "BaseQuery{" +
+                "pageSize=" + pageSize +
+                ", pageNo=" + pageNo +
+                ", startRow=" + startRow +
+                ", sorts=" + sorts +
+                '}';
+    }
 }

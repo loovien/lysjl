@@ -27,11 +27,12 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="configLocation" value="classpath:config.xml" />
-        <property name="mapperLocations" value="classpath*:mappers/ActivityMapper.xml" />
+        <property name="mapperLocations" value="classpath*:mappers/*.xml" />
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.lianying.shangjialian.dal.mapper" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 
 </beans>
