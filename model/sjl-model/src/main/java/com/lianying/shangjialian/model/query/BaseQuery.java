@@ -1,6 +1,7 @@
 package com.lianying.shangjialian.model.query;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,6 +18,13 @@ public class BaseQuery {
     private Integer startRow;
 
     private List<Sort> sorts = new ArrayList<Sort>();
+
+
+    private Date createdAt;
+
+    private Date updatedAt;
+
+    private Date deletedAt;
 
     public BaseQuery() {
     }
@@ -66,6 +74,30 @@ public class BaseQuery {
         this.sorts = sorts;
     }
 
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Date getDeletedAt() {
+        return deletedAt;
+    }
+
+    public void setDeletedAt(Date deletedAt) {
+        this.deletedAt = deletedAt;
+    }
+
     @Override
     public String toString() {
         return "BaseQuery{" +
@@ -73,6 +105,9 @@ public class BaseQuery {
                 ", pageNo=" + pageNo +
                 ", startRow=" + startRow +
                 ", sorts=" + sorts +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", deletedAt=" + deletedAt +
                 '}';
     }
 }

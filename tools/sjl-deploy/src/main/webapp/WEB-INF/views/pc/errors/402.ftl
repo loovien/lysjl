@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title> 商家恋 | 我要联赢</title>
 
     <!-- Bootstrap -->
     <link href="/static/plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,10 +29,10 @@
                 <div class="text-center text-center">
                     <h1 class="error-number">404</h1>
                     <h2>Sorry but we couldn't find this page</h2>
-                    <p>This page you are looking for does not exist <a href="#">Report this?</a>
+                    <p>您访问的页面去火星咯, 咻咻... <a href="/">去首页?</a>
                     </p>
                     <div class="mid_center">
-                        <h3>Search</h3>
+                        <h3>搜索</h3>
                         <form>
                             <div class="col-xs-12 form-group pull-right top_search">
                                 <div class="input-group">

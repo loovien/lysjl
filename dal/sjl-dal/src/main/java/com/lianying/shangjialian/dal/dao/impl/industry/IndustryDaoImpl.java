@@ -7,6 +7,7 @@ import com.lianying.shangjialian.dal.mapper.BaseMapper;
 import com.lianying.shangjialian.dal.mapper.industry.IndustryMapper;
 import com.lianying.shangjialian.model.dataobject.industry.IndustryDO;
 import com.lianying.shangjialian.model.query.BaseQuery;
+import com.lianying.shangjialian.model.query.activity.IndustryQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -27,8 +28,12 @@ public class IndustryDaoImpl extends BaseDaoImpl<IndustryDO> implements Industry
         return industryMapper;
     }
 
+    public List<IndustryDO> queryByPage(IndustryQuery baseQuery) {
+        return industryMapper.queryByPage(baseQuery);
+    }
+
     @Override
-    public List<IndustryDO> queryByPage(BaseQuery baseQuery) {
+    public <S extends BaseQuery> List<IndustryDO> queryByPage(S baseQuery) {
         return industryMapper.queryByPage(baseQuery);
     }
 
@@ -36,4 +41,5 @@ public class IndustryDaoImpl extends BaseDaoImpl<IndustryDO> implements Industry
     public Integer count(BaseQuery baseQuery) {
         return industryMapper.count(baseQuery);
     }
+
 }

@@ -18,7 +18,8 @@
                 id = #{id} and
             </if>
             <if test="name != null">
-                name like %#{name}% and
+                <bind name="pattern" value="'%' + _parameter.getName() + '%'" />
+                name like #{pattern} and
             </if>
             <if test="parentId != null">
                 parent_id = #{parentId} and
@@ -30,8 +31,9 @@
         SELECT * FROM bizman_industry where id = #{id}
     </select>
 
-    <select id="queryByPage" resultMap="industryResultMap">
+    <select id="queryByPage" resultMap="industryResultMap" parameterType="com.lianying.shangjialian.model.query.activity.IndustryQuery">
         SELECT * from bizman_industry
+        <include refid="query" />
         <include refid="com.lianying.shangjialian.dal.mapper.BaseMapper.orderByConditions" />
         <include refid="com.lianying.shangjialian.dal.mapper.BaseMapper.pagination" />
     </select>

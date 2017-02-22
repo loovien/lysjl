@@ -13,7 +13,7 @@
             </div>
             <div class="profile_info">
                 <span>欢迎您</span>
-                <h2>大帝</h2>
+                <h2>${_name}</h2>
             </div>
         </div>
         <!-- /menu profile quick info -->
@@ -27,8 +27,9 @@
                 <ul class="nav side-menu">
                     <li><a><i class="fa fa-home"></i> 活动 <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="/activity/general">新建通用活动</a></li>
-                            <li><a href="/activity/bargain">砍价活动(开发中...)</a></li>
+                            <li><a href="/activity/industry">行业管理</a></li>
+                            <li><a href="/activity/general">通用活动</a></li>
+                            <li><a href="/activity/bargain">砍价活动</a></li>
                             <li><a href="/activity/manage">活动管理</a></li>
                         </ul>
                     </li>

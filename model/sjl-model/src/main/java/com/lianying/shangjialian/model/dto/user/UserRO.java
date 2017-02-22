@@ -18,6 +18,12 @@ public class UserRO implements Serializable{
 
     private Date expiredAt;
 
+    private Date createdAt;
+
+    private Date updatedAt;
+
+    private Date deletedAt;
+
     public UserRO() {
     }
 
@@ -60,13 +66,40 @@ public class UserRO implements Serializable{
         this.expiredAt = expiredAt;
     }
 
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Date getDeletedAt() {
+        return deletedAt;
+    }
+
+    public void setDeletedAt(Date deletedAt) {
+        this.deletedAt = deletedAt;
+    }
+
     @Override
     public String toString() {
-        return "UserDO{" +
+        return "UserRO{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", expiredAt=" + expiredAt +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", deletedAt=" + deletedAt +
                 '}';
     }
 }

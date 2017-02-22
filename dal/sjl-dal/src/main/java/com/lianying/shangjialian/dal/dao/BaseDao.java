@@ -17,7 +17,7 @@ public interface BaseDao<T> {
 
     void update(T entity);
 
-    List<T> queryByPage(BaseQuery baseQuery);
+    <S extends BaseQuery> List<T> queryByPage(S baseQuery);
 
     Integer count(BaseQuery baseQuery);
 }

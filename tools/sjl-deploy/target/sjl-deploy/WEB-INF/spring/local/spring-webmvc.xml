@@ -14,9 +14,9 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframew
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
 
-    <!--<mvc:interceptors>-->
-        <!--<bean class="com.lianying.shangjialian.web.interceptor.LoginInterceptor" />-->
-    <!--</mvc:interceptors>-->
+    <mvc:interceptors>
+        <bean class="com.lianying.shangjialian.web.interceptor.LoginInterceptor" />
+    </mvc:interceptors>
 
     <!--
     <mvc:view-resolvers>

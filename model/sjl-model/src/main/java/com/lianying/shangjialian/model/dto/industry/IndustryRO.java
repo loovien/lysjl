@@ -1,13 +1,12 @@
 package com.lianying.shangjialian.model.dto.industry;
 
-import com.lianying.shangjialian.model.dto.BaseRO;
-
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by luowen on 2017/2/22.
  */
-public class IndustryRO extends BaseRO implements Serializable{
+public class IndustryRO implements Serializable{
 
     private static final long serialVersionUID = -3051893981444624702L;
 
@@ -16,6 +15,12 @@ public class IndustryRO extends BaseRO implements Serializable{
     private String name;
 
     private Integer parentId;
+
+    private Date createdAt;
+
+    private Date updatedAt;
+
+    private Date deletedAt;
 
     public IndustryRO() {
     }
@@ -49,12 +54,39 @@ public class IndustryRO extends BaseRO implements Serializable{
         this.parentId = parentId;
     }
 
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Date getDeletedAt() {
+        return deletedAt;
+    }
+
+    public void setDeletedAt(Date deletedAt) {
+        this.deletedAt = deletedAt;
+    }
+
     @Override
     public String toString() {
         return "IndustryRO{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", parentId=" + parentId +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", deletedAt=" + deletedAt +
                 '}';
     }
 }

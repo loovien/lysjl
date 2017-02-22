@@ -5,6 +5,7 @@ import com.lianying.shangjialian.model.query.BaseQuery;
 import com.lianying.shangjialian.service.industry.IndustryService;
 import com.lianying.shangjialian.web.controller.pc.PcBaseController;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
