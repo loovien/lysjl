@@ -1,5 +1,6 @@
 package com.lianying.shangjialian.service.industry;
 
+import com.lianying.shangjialian.model.dataobject.industry.IndustryDO;
 import com.lianying.shangjialian.model.dto.industry.IndustryRO;
 import com.lianying.shangjialian.model.query.BaseQuery;
 
@@ -10,5 +11,7 @@ import java.util.List;
  */
 public interface IndustryService {
 
-    List<IndustryRO> queryIndustry(BaseQuery baseQuery);
+    <S extends BaseQuery> List<IndustryRO> queryIndustry(S baseQuery);
+
+    Integer insert(IndustryDO industryDO);
 }

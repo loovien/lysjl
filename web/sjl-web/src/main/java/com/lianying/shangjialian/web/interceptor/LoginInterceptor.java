@@ -24,11 +24,13 @@ public class LoginInterceptor implements HandlerInterceptor{
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if(auth != null) {
             Object userDetail = auth.getPrincipal();
-            String name = new String("");
+            String name = "Anonymous";
             if(userDetail instanceof User) {
                 name =  ((User) userDetail).getUsername();
             }
-            modelAndView.addObject("_name", name);
+            if(modelAndView != null) {
+                modelAndView.addObject("_name", name);
+            }
         }
     }
 

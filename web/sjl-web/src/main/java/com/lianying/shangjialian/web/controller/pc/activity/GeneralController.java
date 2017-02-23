@@ -27,6 +27,7 @@ public class GeneralController extends PcBaseController{
     @RequestMapping
     public String index(Model model) {
         List<IndustryRO> industries = industryService.queryIndustry(new BaseQuery());
+        System.out.println(industries + "-2sadf");
         model.addAttribute("industries", industries);
         return this.getViewPath("general");
     }

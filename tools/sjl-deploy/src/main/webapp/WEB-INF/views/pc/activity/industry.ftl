@@ -50,7 +50,7 @@
                     <#--</div>-->
 
                         <div class="x_title">
-                            <button class="btn btn-primary btn-sm">添加行业</button>
+                            <a href="/activity/industry/create" class="btn btn-primary btn-sm">添加行业</a>
                         </div>
 
                     <div class="x_content">
@@ -75,6 +75,10 @@
                                                 <button class="btn btn-default btn-xs">修改</button>
                                                 <button class="btn btn-danger btn-xs">删除</button>
                                             </td>
+                                        </tr>
+                                    <#else>
+                                        <tr class="even pointer">
+                                            <td colspan="4" class="text-center">暂无数据</td>
                                         </tr>
                                     </#list>
                                 </tbody>

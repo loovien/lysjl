@@ -33,4 +33,8 @@ public class IndustryServiceImpl implements IndustryService{
         }
         return resp;
     }
+
+    public Integer insert(IndustryDO industryDO) {
+        return industryDao.insert(industryDO);
+    }
 }

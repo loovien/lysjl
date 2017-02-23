@@ -41,4 +41,13 @@
     <select id="count" resultType="java.lang.Integer">
         SELECT count(id) from bizman_industry
     </select>
+
+    <insert id="insert" parameterType="com.lianying.shangjialian.model.dataobject.industry.IndustryDO" useGeneratedKeys="true">
+        INSERT INTO bizman_industry (name, parent_id)
+        VALUE ("#{name}", "#{parentId}")
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyColumn="id" statementType="PREPARED"
+                   keyProperty="returnId" id="insertId">
+            select last_insert_id() as  insertId
+        </selectKey>
+    </insert>
 </mapper>
