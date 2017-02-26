@@ -46,7 +46,7 @@
         INSERT INTO bizman_industry (name, parent_id)
         VALUE ("#{name}", "#{parentId}")
         <selectKey resultType="java.lang.Integer" order="AFTER" keyColumn="id" statementType="PREPARED"
-                   keyProperty="returnId" id="insertId">
+                   keyProperty="returnId">
             select last_insert_id() as  insertId
         </selectKey>
     </insert>
