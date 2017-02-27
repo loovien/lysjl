@@ -39,9 +39,11 @@ public class IndustryDaoImpl extends BaseDaoImpl<IndustryDO> implements Industry
 
     @Override
     public Integer insert(IndustryDO entity) {
-        System.out.println(entity);
-        //return industryMapper.insert(entity);
-        return 1;
+        if(entity.getParentId() == null)
+            entity.setParentId(0);
+        Integer result = industryMapper.insert(entity);
+        System.out.println(result);
+         return  1;
     }
 
     @Override

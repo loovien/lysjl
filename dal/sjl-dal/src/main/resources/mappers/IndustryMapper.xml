@@ -33,6 +33,11 @@
 
     <select id="queryByPage" resultMap="industryResultMap" parameterType="com.lianying.shangjialian.model.query.activity.IndustryQuery">
         SELECT * from bizman_industry
+        <where >
+            <if test="query.name != ''">
+                name like '%lu.%'
+            </if>
+        </where>
         <include refid="query" />
         <include refid="com.lianying.shangjialian.dal.mapper.BaseMapper.orderByConditions" />
         <include refid="com.lianying.shangjialian.dal.mapper.BaseMapper.pagination" />
@@ -42,12 +47,8 @@
         SELECT count(id) from bizman_industry
     </select>
 
-    <insert id="insert" parameterType="com.lianying.shangjialian.model.dataobject.industry.IndustryDO" useGeneratedKeys="true">
+    <insert id="insert" parameterType="com.lianying.shangjialian.model.dataobject.industry.IndustryDO" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO bizman_industry (name, parent_id)
-        VALUE ("#{name}", "#{parentId}")
-        <selectKey resultType="java.lang.Integer" order="AFTER" keyColumn="id" statementType="PREPARED"
-                   keyProperty="returnId">
-            select last_insert_id() as  insertId
-        </selectKey>
+        VALUES ("#{name, jdbcType=VARCHAR}", "#{parentId}")
     </insert>
 </mapper>

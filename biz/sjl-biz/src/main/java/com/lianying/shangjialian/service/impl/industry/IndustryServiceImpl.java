@@ -4,6 +4,7 @@ import com.lianying.shangjialian.dal.dao.industry.IndustryDao;
 import com.lianying.shangjialian.model.dataobject.industry.IndustryDO;
 import com.lianying.shangjialian.model.dto.industry.IndustryRO;
 import com.lianying.shangjialian.model.query.BaseQuery;
+import com.lianying.shangjialian.model.query.Sort;
 import com.lianying.shangjialian.service.industry.IndustryService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,12 @@ public class IndustryServiceImpl implements IndustryService{
 
     public List<IndustryRO> queryIndustry(BaseQuery baseQuery) {
         List<IndustryRO> resp = new ArrayList<IndustryRO>();
+
+        List<Sort> sorts = new ArrayList<Sort>();
+        sorts.add(new Sort("created_at", Sort.SortType.DESC));
+        System.out.println("hello ->"+sorts);
+        baseQuery.setSorts(sorts);
+
         List<IndustryDO> resultList = industryDao.queryByPage(baseQuery);
 
         for (IndustryDO industryDO : resultList) {

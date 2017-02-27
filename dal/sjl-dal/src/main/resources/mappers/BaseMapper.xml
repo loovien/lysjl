@@ -7,7 +7,7 @@
         <if test="sorts != null and sorts.size() > 0">
             ORDER BY
             <foreach collection="sorts" item="sort" separator="," open="" index="" close="">
-                ${sort.columeName } ${sort.sortType}
+                ${sort.columnName } ${sort.sortType},
             </foreach>
 
         </if>

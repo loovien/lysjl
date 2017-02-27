@@ -59,4 +59,12 @@ public class Sort {
             this.name = name;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Sort{" +
+                "columnName='" + columnName + '\'' +
+                ", sortType='" + sortType + '\'' +
+                '}';
+    }
 }
