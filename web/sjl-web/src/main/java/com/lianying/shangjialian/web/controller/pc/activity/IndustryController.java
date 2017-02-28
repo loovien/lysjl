@@ -7,10 +7,13 @@ import com.lianying.shangjialian.model.query.activity.IndustryQuery;
 import com.lianying.shangjialian.service.industry.IndustryService;
 import com.lianying.shangjialian.web.controller.pc.PcBaseController;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -62,6 +65,46 @@ public class IndustryController extends PcBaseController{
         insertIdMap.put("insertId", insertId);
         return RespUtils.success("创建成功", insertIdMap);
     }
+
+
+    @GetMapping(value = "/update/{id}")
+    public String update(@PathVariable Integer id, Model model) {
+        IndustryRO industryRO = industryService.queryById(id);
+        model.addAttribute("industry", industryRO);
+        return getViewPath("industryUpdate");
+    }
+
+    @PostMapping(value = "/update/{id}")
+    @ResponseBody
+    public Map<String, Object> update(@PathVariable Integer id, HttpServletRequest httpServletRequest) {
+
+        System.out.println(httpServletRequest);
+
+        String name = httpServletRequest.getParameter("name");
+
+        IndustryDO industryDO = new IndustryDO();
+        industryDO.setId(id);
+        industryDO.setName(name);
+        industryDO.setUpdatedAt(new Date());
+
+        System.out.println(industryDO);
+
+        industryService.update(industryDO);
+
+        return RespUtils.success("修改成功", null);
+    }
+
+    @PostMapping(value = "/delete/{id}")
+    @ResponseBody
+    public Map<String, Object> delete(@PathVariable Integer id) {
+        try {
+            industryService.deleteById(id);
+            return RespUtils.success("删除成功", null);
+        } catch (RuntimeException e) {
+            return  RespUtils.error("删除失败", e);
+        }
+    }
+
 
     @Override
     protected String getSubViewPath() {

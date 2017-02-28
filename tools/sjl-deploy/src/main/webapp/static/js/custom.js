@@ -5026,7 +5026,6 @@ if (typeof NProgress != 'undefined') {
 	   
 	   
 	$(document).ready(function() {
-				
 		init_sparklines();
 		init_flot_chart();
 		init_sidebar();
@@ -5061,7 +5060,40 @@ if (typeof NProgress != 'undefined') {
 		init_CustomNotification();
 		init_autosize();
 		init_autocomplete();
-				
-	});	
-	
+	});
+
+
+/**
+ *  customer http utils
+ */
+var httpUtils = (function () {
+	"use strict";
+	if(typeof $ == "undefined") {
+		throw new Error("JQuery Not Found!!");
+	}
+	var httpUtils = {
+	    get: function (url, query) {
+            return this._query(url, query, "get");
+        },
+		post: function (url, query) {
+            return this._query(url, query, "post");
+        },
+
+		put: function (url, query) {
+            return this._query(url, query, "put");
+        },
+		deleteIt: function (url, query) {
+	        return this._query(url, query, "delete");
+        },
+		_query: function (url, query, method) {
+            return $.ajax({
+                type: method,
+                url: url,
+                data: query,
+                dataType: "json"
+            })
+        }
+	}
+	return httpUtils;
+})($);
 

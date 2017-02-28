@@ -14,4 +14,10 @@ public interface IndustryService {
     <S extends BaseQuery> List<IndustryRO> queryIndustry(S baseQuery);
 
     Integer insert(IndustryDO industryDO);
+
+    IndustryRO queryById(Integer id);
+
+    void update(IndustryDO industryDO);
+
+    void deleteById(Integer id);
 }

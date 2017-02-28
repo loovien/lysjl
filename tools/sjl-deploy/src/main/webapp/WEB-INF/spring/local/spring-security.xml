@@ -9,6 +9,7 @@
         <intercept-url pattern="/**" access="ROLE_USER" />
         <logout logout-url="/logout" logout-success-url="/login" />
         <form-login login-page="/login" default-target-url="/" />
+        <csrf disabled="true" />
     </http>
     <user-service>
         <user name="admin" password="admin" authorities="ROLE_USER" />

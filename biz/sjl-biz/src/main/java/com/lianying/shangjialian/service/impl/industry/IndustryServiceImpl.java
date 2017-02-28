@@ -44,4 +44,28 @@ public class IndustryServiceImpl implements IndustryService{
     public Integer insert(IndustryDO industryDO) {
         return industryDao.insert(industryDO);
     }
+
+    /**
+     * query industry by id;
+     *
+     * @param id
+     * @return industryRO
+     */
+    public IndustryRO queryById(Integer id) {
+        IndustryDO industryDO = industryDao.queryById(id);
+        if(industryDO == null) {
+            throw new RuntimeException("不存在");
+        }
+        IndustryRO industryRO = new IndustryRO();
+        BeanUtils.copyProperties(industryDO, industryRO);
+        return industryRO;
+    }
+
+    public void update(IndustryDO industryDO) {
+        industryDao.update(industryDO);
+    }
+
+    public void deleteById(Integer id) {
+        industryDao.deleteById(id);
+    }
 }

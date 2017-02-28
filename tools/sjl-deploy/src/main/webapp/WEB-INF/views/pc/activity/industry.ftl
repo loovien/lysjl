@@ -72,8 +72,8 @@
                                             <td class=" ">${industry.name}</td>
                                             <td class=" ">${industry.createdAt?datetime} </td>
                                             <td class=" ">
-                                                <button class="btn btn-default btn-xs">修改</button>
-                                                <button class="btn btn-danger btn-xs">删除</button>
+                                                <a href="/activity/industry/update/${industry.id}" class="btn btn-default btn-xs">修改</a>
+                                                <button class="btn btn-danger btn-xs js-industry-delete" data-id="${industry.id}">删除</button>
                                             </td>
                                         </tr>
                                     <#else>
@@ -92,3 +92,5 @@
 </div>
 <!-- /page content -->
 <#include "../layouts/footer.ftl">
+
+<script src="/static/js/pc/activity/deleteIndustry.js"></script>

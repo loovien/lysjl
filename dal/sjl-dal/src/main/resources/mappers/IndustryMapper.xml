@@ -58,4 +58,24 @@
             </if>
         </trim>
     </insert>
+
+    <update id="update" parameterType="com.lianying.shangjialian.model.dataobject.industry.IndustryDO">
+        UPDATE bizman_industry
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="updatedAt != null">
+                updated_at = #{updatedAt},
+            </if>
+            <if test="deletedAt != null">
+                deleted_at = #{deletedAt}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="com.lianying.shangjialian.model.dataobject.industry.IndustryDO">
+        DELETE FROM bizman_industry WHERE id = #{id};
+    </delete>
 </mapper>

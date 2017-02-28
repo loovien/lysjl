@@ -49,7 +49,6 @@
 <script src="/static/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
 <!-- Custom Theme Scripts -->
-<script src="/static/js/custom.min.js"></script>
-
+<script src="/static/js/custom.js"></script>
 </body>
 </html>

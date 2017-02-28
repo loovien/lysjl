@@ -7,7 +7,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <#--<h3>添加行业</h3>-->
+            <#--<h3>添加行业</h3>-->
             </div>
         </div>
         <div class="clearfix"></div>
@@ -44,13 +44,13 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"> 行业名称: <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" id="js-industry-name" name="industryName" required="required" class="form-control col-md-7 col-xs-12">
+                                    <input type="text" value="${industry.name}" id="js-industry-name" name="name" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
+                            <input type="hidden" id="js-industry-id" value="${industry.id}">
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                    <button class="btn btn-primary js-cancel" type="reset">重置</button>
                                     <button type="submit"  class="btn btn-success js-submit">保存</button>
                                 </div>
                             </div>
@@ -61,25 +61,6 @@
         </div>
     </div>
 </div>
-
-
-<div class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                <p>One fine body&hellip;</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal --
 <!-- /page content -->
 <#include "../layouts/footer.ftl">
-<script src="/static/js/pc/activity/addIndustry.js"></script>
+<script src="/static/js/pc/activity/updateIndustry.js"></script>

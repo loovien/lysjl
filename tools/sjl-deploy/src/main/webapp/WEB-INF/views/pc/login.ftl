@@ -43,9 +43,6 @@
                         <#--<a class="reset_pass" href="#">Lost your password?</a>-->
                             <input type="submit" class="btn btn-default submit" value="登录">
                     </div>
-
-                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
                     <div class="clearfix"></div>
 
                     <!--
