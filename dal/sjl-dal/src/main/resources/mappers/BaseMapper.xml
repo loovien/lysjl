@@ -4,13 +4,14 @@
 <mapper namespace="com.lianying.shangjialian.dal.mapper.BaseMapper">
 
     <sql id="orderByConditions">
+        <trim suffixOverrides=",">
         <if test="sorts != null and sorts.size() > 0">
             ORDER BY
             <foreach collection="sorts" item="sort" separator="," open="" index="" close="">
-                ${sort.columnName } ${sort.sortType},
+                ${sort.columnName } ${sort.sortType}
             </foreach>
-
         </if>
+        </trim>
     </sql>
 
     <sql id="pagination">

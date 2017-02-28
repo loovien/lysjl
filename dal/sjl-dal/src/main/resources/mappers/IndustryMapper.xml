@@ -32,15 +32,7 @@
     </select>
 
     <select id="queryByPage" resultMap="industryResultMap" parameterType="com.lianying.shangjialian.model.query.activity.IndustryQuery">
-        SELECT * from bizman_industry
-        <where >
-            <if test="query.name != ''">
-                name like '%lu.%'
-            </if>
-        </where>
-        <include refid="query" />
-        <include refid="com.lianying.shangjialian.dal.mapper.BaseMapper.orderByConditions" />
-        <include refid="com.lianying.shangjialian.dal.mapper.BaseMapper.pagination" />
+        SELECT * from bizman_industry <include refid="query" /> <include refid="com.lianying.shangjialian.dal.mapper.BaseMapper.orderByConditions" /> <include refid="com.lianying.shangjialian.dal.mapper.BaseMapper.pagination" />
     </select>
 
     <select id="count" resultType="java.lang.Integer">
@@ -48,7 +40,22 @@
     </select>
 
     <insert id="insert" parameterType="com.lianying.shangjialian.model.dataobject.industry.IndustryDO" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO bizman_industry (name, parent_id)
-        VALUES ("#{name, jdbcType=VARCHAR}", "#{parentId}")
+        INSERT INTO bizman_industry
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                name,
+            </if>
+            <if test="parentId != null">
+                parent_id,
+            </if>
+        </trim>
+        <trim prefix=" values (" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="parentId != null">
+                #{parentId},
+            </if>
+        </trim>
     </insert>
 </mapper>
