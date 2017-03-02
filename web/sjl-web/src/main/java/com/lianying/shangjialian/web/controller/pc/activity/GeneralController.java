@@ -2,6 +2,7 @@ package com.lianying.shangjialian.web.controller.pc.activity;
 
 import com.lianying.shangjialian.model.dto.industry.IndustryRO;
 import com.lianying.shangjialian.model.query.BaseQuery;
+import com.lianying.shangjialian.model.query.activity.IndustryQuery;
 import com.lianying.shangjialian.service.industry.IndustryService;
 import com.lianying.shangjialian.web.controller.pc.PcBaseController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,8 @@ public class GeneralController extends PcBaseController{
 
     @RequestMapping
     public String index(Model model) {
-        List<IndustryRO> industries = industryService.queryIndustry(new BaseQuery());
-        System.out.println(industries + "-2sadf");
+        BaseQuery industryQuery = new IndustryQuery();
+        List<IndustryRO> industries = industryService.queryIndustry(industryQuery);
         model.addAttribute("industries", industries);
         return this.getViewPath("general");
     }

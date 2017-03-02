@@ -28,9 +28,7 @@ public class IndustryServiceImpl implements IndustryService{
 
         List<Sort> sorts = new ArrayList<Sort>();
         sorts.add(new Sort("created_at", Sort.SortType.DESC));
-        System.out.println("hello ->"+sorts);
         baseQuery.setSorts(sorts);
-
         List<IndustryDO> resultList = industryDao.queryByPage(baseQuery);
 
         for (IndustryDO industryDO : resultList) {
