@@ -1,5 +1,7 @@
 package com.lianying.shangjialian.model.dto.activity;
 
+import com.lianying.shangjialian.model.dto.industry.IndustryRO;
+
 import java.io.Serializable;
 
 /**
@@ -34,6 +36,7 @@ public class ActivityRO implements Serializable{
     private Integer bizmanCopyCnt;
 
     private Integer netizenCopyCnt;
+    private IndustryRO industryRO;
 
     public ActivityRO() {
     }
@@ -142,6 +145,14 @@ public class ActivityRO implements Serializable{
         this.netizenCopyCnt = netizenCopyCnt;
     }
 
+    public IndustryRO getIndustryRO() {
+        return industryRO;
+    }
+
+    public void setIndustryRO(IndustryRO industryRO) {
+        this.industryRO = industryRO;
+    }
+
     @Override
     public String toString() {
         return "ActivityRO{" +
@@ -158,6 +169,7 @@ public class ActivityRO implements Serializable{
                 ", isOffshelf=" + isOffshelf +
                 ", bizmanCopyCnt=" + bizmanCopyCnt +
                 ", netizenCopyCnt=" + netizenCopyCnt +
+                ", industryRO=" + industryRO +
                 '}';
     }
 }

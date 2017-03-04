@@ -34,7 +34,7 @@ create table if not exists bizman_activity (
     background_music varchar(256) null default null comment "背景音乐",
     is_recommend tinyint unsigned not null default 0 comment "活动推荐, [0/普通, 1/推荐]",
     is_offshelf tinyint unsigned not null default 0 comment "活动是否下架,[0/正常, 1/下架]",
-    bizmen_copy_cnt int unsigned not null default 0 comment "商家使用次数",
+    bizman_copy_cnt int unsigned not null default 0 comment "商家使用次数",
     netizen_copy_cnt int unsigned not null default 0 comment "网名转发分享次数",
 
     created_at datetime null default current_timestamp,

@@ -36,7 +36,7 @@
                     <#--</div>-->
                     <div class="x_content">
 
-                        <form class="form-horizontal form-label-left" novalidate method="post">
+                        <form id="js-activity-form" class="form-horizontal form-label-left" novalidate method="post">
 
                             <#--<p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> </p>-->
                             <span class="section">活动信息</span>
@@ -45,28 +45,31 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name"> 活动封面图 <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="cover_img" placeholder="upload" required="required" type="file">
+                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
+                                           data-validate-words="2" name="coverImg" placeholder="upload" required="required" type="file">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email"> 活动内页图片 <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="email" type="file" name="banner_img" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
+                                    <input id="email" type="file" name="bannerImg" class="optional form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email"> 活动详情配色 <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="email2" type="color" name="color_plate" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
+                                    <input id="email2" type="color" name="colorPlate"
+                                           class="optional form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number"> 活动主题介绍 <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="number" type="text" name="title" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
+                                    <input id="number" type="text" name="title"
+                                           class="optional form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
 
@@ -74,7 +77,8 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">活动内容介绍 <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <textarea id="textarea" required="required" name="description" class="form-control col-md-7 col-xs-12"></textarea>
+                                    <textarea id="textarea" required="required"
+                                              name="description" class="form-control col-md-7 col-xs-12"></textarea>
                                 </div>
                             </div>
 
@@ -82,20 +86,22 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation"> 收集关键字 <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="occupation" type="text" name="keyword" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
+                                    <input id="occupation" type="text" name="keyword"
+                                           class="optional form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label for="password" class="control-label col-md-3">  设置背景音乐 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="url" id="website" name="background_music" required="required" placeholder="http://www.51lianying.com/test.mp3" class="form-control col-md-7 col-xs-12">
+                                    <input type="url" id="website" name="backgroundMusic"
+                                           required="required" placeholder="http://www.51lianying.com/test.mp3" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12"> 适应行业 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <#list industries as industry>
-                                        <input type="radio" name="industry_id" value="${industry.id}" class="checkbox checkbox-inline icheckbox_flat" /> ${industry.name}
+                                        <input type="radio" name="industryId" value="${industry.id}" class="checkbox checkbox-inline icheckbox_flat" /> ${industry.name}
                                     <#else>
                                         <p>暂时没有</p>
                                     </#list>
@@ -113,8 +119,8 @@
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-3">
-                                    <button type="submit" class="btn btn-primary">取消</button>
-                                    <button id="send" type="submit" class="btn btn-success">保存</button>
+                                    <button type="button" class="btn btn-primary">取消</button>
+                                    <button type="submit" class="btn btn-success js-submit">保存</button>
                                 </div>
                             </div>
                         </form>
@@ -125,6 +131,6 @@
     </div>
 </div>
 <!-- /page content -->
-
-
 <#include "../layouts/footer.ftl">
+
+<script src="/static/js/pc/activity/addActivity.js"></script>

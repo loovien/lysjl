@@ -6,6 +6,7 @@
     <resultMap id="ActivityMap" type="com.lianying.shangjialian.model.dataobject.activity.ActivityDO">
         <id property="id" column="id" />
         <result column="title" property="title" />
+        <result column="industry_id" property="industryId" />
         <result column="description" property="description" />
         <result column="keyword" property="keyword" />
         <result column="cover_img" property="coverImg" />

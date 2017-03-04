@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by luowen on 2017/3/1.
  */
-@Service("activityDao")
+@Service("activityService")
 public class ActivityServiceImpl implements ActivityService{
 
     @Autowired
@@ -47,7 +47,7 @@ public class ActivityServiceImpl implements ActivityService{
         }
     }
 
-    public void recommandById(Integer id) {
+    public void recommendById(Integer id) {
         ActivityDO activityDO = activityDao.queryById(id);
         if(activityDO != null) {
             activityDO.setIsRecommend(activityDO.getIsRecommend() > 0 ? 0 : 1);
@@ -57,5 +57,12 @@ public class ActivityServiceImpl implements ActivityService{
     public void update(ActivityRO activityRO) {
         ActivityDO activityDO = new ActivityDO();
         activityDao.update(activityDO);
+    }
+
+    public Integer insert(ActivityRO activityRO) {
+
+        ActivityDO activityDO = new ActivityDO();
+        BeanUtils.copyProperties(activityRO, activityDO);
+        return activityDao.insert(activityDO);
     }
 }

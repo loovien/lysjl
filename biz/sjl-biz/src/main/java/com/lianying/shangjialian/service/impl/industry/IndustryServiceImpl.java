@@ -52,7 +52,7 @@ public class IndustryServiceImpl implements IndustryService{
     public IndustryRO queryById(Integer id) {
         IndustryDO industryDO = industryDao.queryById(id);
         if(industryDO == null) {
-            throw new RuntimeException("不存在");
+            throw new RuntimeException("行业不存在");
         }
         IndustryRO industryRO = new IndustryRO();
         BeanUtils.copyProperties(industryDO, industryRO);

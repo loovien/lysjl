@@ -16,7 +16,9 @@ public interface ActivityService {
 
     void offShelfById(Integer id);
 
-    void recommandById(Integer id);
+    void recommendById(Integer id);
 
     void update(ActivityRO activityRO);
+
+    Integer insert(ActivityRO activityRO);
 }

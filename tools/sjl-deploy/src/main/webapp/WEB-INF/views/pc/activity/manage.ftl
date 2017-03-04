@@ -48,31 +48,25 @@
                                 </thead>
 
                                 <tbody>
-                                <tr class="even pointer">
-                                    <td class=" ">121000040</td>
-                                    <td class=" ">May 23, 2014 11:47:56 PM </td>
-                                    <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                                    <td class=" ">John Blank L</td>
-                                    <td class=" ">Paid</td>
-                                    <td class="a-center ">
-                                        <a href="#" class="btn btn-info btn-xs">修改</a>
-                                        <button class="btn btn-danger btn-xs">下架</button>
-                                        <button class="btn btn-primary btn-xs">推荐</button>
-                                    </td>
-                                </tr>
-                                <tr class="odd pointer">
-                                    <td class=" ">121000039</td>
-                                    <td class=" ">May 23, 2014 11:30:12 PM</td>
-                                    <td class=" ">121000208 <i class="success fa fa-long-arrow-up"></i>
-                                    </td>
-                                    <td class=" ">John Blank L</td>
-                                    <td class="a-right a-right ">$741.20</td>
-                                    <td class="a-center ">
-                                        <a href="#" class="btn btn-info btn-xs">修改</a>
-                                        <button class="btn btn-danger btn-xs">下架</button>
-                                        <button class="btn btn-primary btn-xs">推荐</button>
-                                    </td>
-                                </tr>
+                                <#list activityRos as activityRo>
+                                    <tr class="${activityRo?item_cycle("even", "odd")} pointer">
+                                        <td class=" ">${activityRo.title}</td>
+                                        <td class=" ">${activityRo.title}</td>
+                                        <#--<td class=" ">${activityRo.createdAt?iso}</td>-->
+                                        <td class=" ">${activityRo.bizmanCopyCnt}</td>
+                                        <td class=" ">${activityRo.netizenCopyCnt}</td>
+                                        <td class=" ">${activityRo.industryRO.name}</td>
+                                        <td class="a-center ">
+                                            <a href="/activity/general/${activityRo.id}" class="btn btn-info btn-xs">修改</a>
+                                            <button class="btn btn-danger btn-xs js-putdown" data-id="${activityRo.id}">下架</button>
+                                            <button class="btn btn-primary btn-xs js-recommend" data-id="${activityRo.id}">推荐</button>
+                                        </td>
+                                    </tr>
+                                    <#else>
+                                        <tr class="odd pointer">
+                                            <td colspan="6" class=" ">暂无数据</td>
+                                        </tr>
+                                </#list>
                                 </tbody>
                             </table>
                         </div>

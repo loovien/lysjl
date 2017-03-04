@@ -15,7 +15,7 @@ public class BaseQuery {
 
     private Integer pageNo;
 
-    private Integer startRow;
+    private Integer startRow = 0;
 
     private List<Sort> sorts = new ArrayList<Sort>();
 
@@ -33,6 +33,10 @@ public class BaseQuery {
         this.pageSize = pageSize;
         this.pageNo = pageNo;
         this.startRow = (pageNo - 1) * pageSize;
+    }
+
+    public void initializeStartRow() {
+        this.startRow = (this.pageNo - 1) * this.pageSize;
     }
 
     public static Integer getDefaultPageSize() {
